@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Typewrite effect</title>
+		<style>
+			p#display {
+				white-space: pre-line;
+			}
+		</style>
+		<script>
+			const message = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ligula quam, placerat malesuada diam vitae, vulputate blandit turpis. Aliquam non tortor metus. Cras vel consectetur magna, quis vulputate nisi. Sed pharetra lectus nibh, a pulvinar urna tristique non. Duis in leo blandit, efficitur nibh et, suscipit nulla. Aliquam eget mollis nisl, sit amet fringilla eros. Duis volutpat, est at semper varius, nibh augue ultricies sapien, sit amet suscipit nisi massa in nulla. Suspendisse cursus tellus sed erat aliquam dapibus. Phasellus varius consequat eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer eu rutrum dui. In neque ex, venenatis ac molestie in, rhoncus sit amet risus. Cras non bibendum lacus. Donec condimentum tincidunt nunc eu congue. Phasellus in purus odio. Aenean et purus risus.
+
+Vivamus purus justo, dignissim ut dolor eu, vulputate sollicitudin ex. Cras erat lorem, egestas in est ac, dignissim molestie urna. Integer porttitor, purus id ullamcorper dapibus, odio nunc eleifend neque, quis commodo sapien diam quis sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla faucibus, est eu condimentum sagittis, dolor diam feugiat purus, sed tempor arcu mauris fringilla libero. Nam gravida sed turpis at eleifend. Sed a lacinia eros, sed viverra velit. Duis eu varius libero.
+
+Nunc vitae orci volutpat, imperdiet ex et, volutpat mi. Nullam interdum lacinia justo nec egestas. Fusce blandit sapien sed rutrum scelerisque. Aliquam malesuada vulputate egestas. Phasellus semper augue eget nunc scelerisque elementum. Aenean suscipit augue tempus iaculis feugiat. In feugiat laoreet lorem, eu consequat magna rutrum in. Pellentesque blandit tellus vitae est tempus elementum. Fusce erat odio, tincidunt vel lacus at, convallis elementum risus. Curabitur ac nibh faucibus mi mattis posuere. Pellentesque eu magna mauris. Donec et pulvinar ex. Duis mattis rhoncus lectus, id tincidunt nibh luctus vitae. Nam faucibus venenatis nibh.
+
+Maecenas consequat leo id massa facilisis, a facilisis est mollis. Donec nisl tellus, sagittis at consectetur luctus, finibus quis odio. Vivamus commodo mollis nisi, in blandit nulla. Fusce interdum massa auctor, laoreet arcu nec, venenatis ligula. Nulla euismod nisi sed nisl iaculis, non faucibus lacus pretium. Morbi id ex at felis hendrerit scelerisque in ac nunc. Aenean eleifend diam a convallis tempor. Praesent vestibulum eget est ac porta. Nam eu velit non sapien fermentum condimentum. Ut feugiat, odio eu volutpat dictum, tortor dolor gravida lectus, vel malesuada leo magna nec quam. Curabitur ornare purus vitae nibh convallis hendrerit.
+
+Donec blandit eleifend vehicula. Aliquam at ullamcorper dui, at commodo dui. Donec non ipsum et libero feugiat elementum. Maecenas ac bibendum mi, ac scelerisque dolor. Duis urna nunc, consequat ac dapibus vitae, aliquam quis arcu. Proin maximus finibus dolor ac vehicula. Fusce dui magna, feugiat et blandit id, pharetra eu lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque iaculis mattis tellus, at elementum velit euismod ac. Aliquam vitae nunc leo. Fusce sit amet urna et mi tincidunt tristique.`;
+
+			function scrollToBottom() {
+				document.documentElement.scrollIntoView(false);
+			}
+
+			function typewrite() {
+				let chars = message.split('');
+				let el = document.getElementById('display');
+				el.innerHTML = '';
+				chars.forEach((c, i) => {
+					setTimeout(() => {
+						el.innerHTML += c;
+						scrollToBottom();
+					}, 10 * i);
+				});
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				typewrite();
+			});
+		</script>
+	</head>
+	<body>
+		<p id="display"></p>
+	</body>
+</html>
